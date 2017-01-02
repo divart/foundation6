@@ -1,0 +1,41 @@
+// Project mixins
+
+@mixin align-middle {
+	@include transform(translate(-50%, -50%));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+@mixin vert-align{
+    font-size: 0;
+    &:before{
+        content: '';
+        height: 100%;
+        width: 0;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    >*{
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
+@mixin list-unstyled{
+	margin: 0;
+	list-style: none;
+	padding: 0;
+}
+
+//declare variables below
+
+$blue: #1a608b;
+
+$text_color: #444;
+
+$main_color: $blue;
+// $sub_color:
+
+$font: 'Open Sans', sans-serif;
+// $sub_font:

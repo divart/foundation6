@@ -1,0 +1,863 @@
+/* -----------------------------------------
+   Home page slider
+----------------------------------------- */
+#home-slider .slick-slide {
+  height: 500px;
+  /*define the height of slide*/
+  -moz-transition: height 0.3s ease;
+  -o-transition: height 0.3s ease;
+  -webkit-transition: height 0.3s ease;
+  transition: height 0.3s ease;
+  position: relative;
+}
+#home-slider .slider-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 5px 10px;
+}
+#home-slider .slider-caption p, #home-slider .slider-caption h3 {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 1023px) {
+  #home-slider .slick-slide {
+    height: 400px;
+    /*define the height of slide*/
+  }
+}
+@media only screen and (max-width: 639px) {
+  #home-slider .slick-slide {
+    height: 300px;
+    /*define the height of slide*/
+  }
+}
+/* -----------------------------------------
+   WordPress Core Classes
+----------------------------------------- */
+.alignnone {
+  margin: 0 1em 1em 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 100%;
+  /* Image does not overflow the content area */
+  padding: 5px 5px 10px;
+  text-align: center;
+}
+.wp-caption img {
+  width: auto;
+  margin-bottom: 10px;
+}
+.wp-caption p {
+  margin-bottom: 0;
+}
+
+#wpadminbar {
+  opacity: 0.3;
+  transition: 0.2s opacity linear;
+  -webkit-transform: translateZ(0);
+}
+#wpadminbar:hover, #wpadminbar:focus {
+  opacity: 1;
+}
+
+/* -----------------------------------------
+   General fixes
+----------------------------------------- */
+html, body {
+  height: auto;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  position: static;
+}
+
+/* Placeholder styling */
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #555;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #555;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #555;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #555;
+}
+
+/* Input Styling */
+[type=color],
+[type=date],
+[type=datetime-local],
+[type=datetime],
+[type=email],
+[type=month],
+[type=number],
+[type=password],
+[type=search],
+[type=tel],
+[type=text],
+[type=time],
+[type=url],
+[type=week],
+textarea {
+  /* STYLES GO THERE */
+  margin-bottom: 0;
+}
+
+textarea[rows] {
+  /*Styles for TextArea*/
+  height: 150px;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+[type=checkbox],
+[type=file],
+[type=radio] {
+  margin-bottom: 0;
+}
+
+/* -----------------------------------------
+   Typography
+----------------------------------------- */
+body {
+  color: #444;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  font-family: inherit;
+  color: #222;
+}
+
+h1 {
+  /*basic heading styles*/
+}
+
+h2 {
+  /*basic heading styles*/
+}
+
+h3 {
+  /*basic heading styles*/
+}
+
+h4 {
+  /*basic heading styles*/
+}
+
+h5 {
+  /*basic heading styles*/
+}
+
+h6 {
+  /*basic heading styles*/
+}
+
+p {
+  /*basic paragraph styles*/
+}
+p:empty {
+  display: none;
+}
+p a {
+  text-decoration: underline;
+}
+
+ul {
+  /*basic list styles*/
+}
+ul li {
+  /*basic list-item styles*/
+}
+
+a {
+  color: #1a608b;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+a:hover, a:focus {
+  /*basic hover and focus effects*/
+  color: #0a2535;
+  outline: none;
+}
+
+/* ------------------------------------
+    Basic Styles
+------------------------------------- */
+/* Clearfix */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/* Button additional styles */
+.button {
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.button:hover, .button:focus {
+  /*basic hover and focus effects*/
+}
+
+/* Align Middle */
+.align-middle {
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* Pagination */
+.pagination .current {
+  color: #fff;
+  background: #1a608b;
+}
+
+/* Search form */
+#searchform {
+  position: relative;
+}
+
+#s {
+  padding-right: 75px;
+}
+
+#searchsubmit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  padding: .5rem;
+}
+#searchsubmit:after {
+  font-family: FontAwesome;
+  font-size: 20px;
+}
+
+#home-slider .slick-slide {
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/* ------------------------------------
+    Header Styles
+------------------------------------- */
+.logo img {
+  max-height: 150px;
+}
+
+/* ------------------------------------
+    Content Styles
+------------------------------------- */
+/* Blog page */
+.posts-list article {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 20px;
+}
+.posts-list .entry-meta {
+  margin-bottom: 0;
+}
+.posts-list #searchform {
+  margin-bottom: 40px;
+}
+
+.entry-meta {
+  color: #666;
+  font-size: 14px;
+}
+
+.thumbnail {
+  margin-bottom: 20px;
+}
+
+/* Comments block */
+.comment-list {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.comment-meta {
+  font-size: 14px;
+}
+
+.comment-metadata {
+  color: #666;
+}
+
+.comment-content {
+  font-size: 14px;
+  padding-left: 25px;
+  margin-top: 20px;
+  border-left: 1px solid #ddd;
+}
+
+.comment-reply-link {
+  display: inline-block;
+  padding: .33333rem .5rem;
+  font-size: .8rem;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 0;
+  background: #777;
+  color: #fefefe;
+}
+
+/* 404 page */
+.not-found {
+  padding: 100px 0;
+}
+.not-found .label {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #1a608b;
+}
+.not-found .label:hover {
+  background-color: #144869;
+  color: #fff;
+}
+
+/* Sidebar */
+.widget {
+  margin-bottom: 20px;
+}
+
+/* -----------------------------------------
+    Contact Form
+----------------------------------------- */
+/*basic Gravity Form styles and fixes, if you dont need/use this comment or delete styles below*/
+.gform_wrapper ul {
+  list-style: none;
+}
+
+.gform_fields {
+  margin: 0;
+}
+
+.gfield {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.gfield_label {
+  display: none;
+}
+
+.gfield_error input, .gfield_error textarea {
+  border-color: red;
+}
+
+.gfield_description {
+  margin-top: 10px;
+}
+
+.gform_confirmation_message {
+  margin-bottom: 15px;
+}
+
+.gform_footer {
+  text-align: right;
+  /*aligning of submit button*/
+}
+
+.validation_error {
+  margin-bottom: 15px;
+  padding: 5px;
+  color: #990000;
+  border: 1px solid red;
+}
+
+.validation_message {
+  margin-bottom: 10px;
+  color: #990000;
+}
+
+button, .button, input[type='submit'], input[type='reset'] {
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 0;
+  background-color: #1a608b;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+button:hover, button:focus, .button:hover, .button:focus, input[type='submit']:hover, input[type='submit']:focus, input[type='reset']:hover, input[type='reset']:focus {
+  background-color: #124260;
+}
+
+/* ------------------------------------
+    Footer Styles
+------------------------------------- */
+.sticky-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer-menu {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+.footer-menu li {
+  display: inline-block;
+}
+.footer-menu li a {
+  display: block;
+  padding: 5px 10px;
+}
+
+@-moz-keyframes rotating_cw {
+  0% {
+    -moz-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  100% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes rotating_cw {
+  0% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotating_cw {
+  0% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  100% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-moz-keyframes flash-logo {
+  0% {
+    visibility: visible;
+  }
+  41.6% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes flash-logo {
+  0% {
+    visibility: visible;
+  }
+  41.6% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes flash-logo {
+  0% {
+    visibility: visible;
+  }
+  41.6% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@-moz-keyframes rotating {
+  0% {
+    -moz-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  41.6666% {
+    -moz-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  50% {
+    -moz-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  58.3333% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  83.3333% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  91.6667% {
+    -moz-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  100% {
+    -moz-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+@-webkit-keyframes rotating {
+  0% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  41.6666% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  50% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  58.3333% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  83.3333% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  91.6667% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+@keyframes rotating {
+  0% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  41.6666% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  50% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  58.3333% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  83.3333% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  91.6667% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  100% {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+@-moz-keyframes menu {
+  from {
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  to {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes menu {
+  from {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes menu {
+  from {
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  to {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-moz-keyframes logo {
+  from {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+@-webkit-keyframes logo {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+@keyframes logo {
+  from {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+.menu-bars {
+  width: 56px;
+  height: 56px;
+  padding: 15px 17px 15px 17px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #1a608b;
+  position: relative;
+}
+.menu-bars:before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  background-image: url(../images/main_logo.svg);
+  width: 26px;
+  height: 26px;
+  left: 14px;
+  top: 15px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -moz-animation: flash-logo 3s 0.3s steps(3) infinite;
+  -webkit-animation: flash-logo 3s 0.3s steps(3) infinite;
+  animation: flash-logo 3s 0.3s steps(3) infinite;
+  visibility: visible;
+  background-position: 50% 50%;
+}
+.menu-bars__row {
+  position: relative;
+  z-index: 2;
+  margin-top: 11px;
+  display: block;
+  -moz-transition: -moz-transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42) 0.3s;
+  -o-transition: -o-transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42) 0.3s;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  -webkit-transition-delay: 0.3s;
+  transition: transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42) 0.3s;
+  -moz-animation: rotating 3s 0.3s infinite cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  -webkit-animation: rotating 3s 0.3s infinite cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  animation: rotating 3s 0.3s infinite cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.menu-bars__row, .menu-bars__row:before, .menu-bars__row:after {
+  width: 100%;
+  padding-bottom: 19%;
+  background-color: #fff;
+}
+.menu-bars__row:before, .menu-bars__row:after {
+  content: '';
+  position: absolute;
+  -moz-transition: -moz-transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42), top 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42), bottom 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  -o-transition: -o-transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42), top 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42), bottom 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42), top 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42), bottom 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  transition: transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42), top 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42), bottom 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42);
+}
+.menu-bars__row:before {
+  top: -209%;
+}
+.menu-bars__row:after {
+  bottom: -214%;
+}
+.menu-bars.in-progress .menu-bars__row {
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.menu-bars:hover:before {
+  display: none;
+  -moz-animation: none;
+  -webkit-animation: none;
+  animation: none;
+}
+.menu-bars:hover .menu-bars__row {
+  -moz-animation: none;
+  -webkit-animation: none;
+  animation: none;
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -moz-transition: -moz-transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  -o-transition: -o-transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  transition: transform 0.3s cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.menu-bars.back-anim:before {
+  display: none;
+  -moz-animation: none;
+  -webkit-animation: none;
+  animation: none;
+}
+.menu-bars.back-anim .menu-bars__row {
+  -moz-animation: logo 0.3s 0.2s 1 cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  -webkit-animation: logo 0.3s 0.2s 1 cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  animation: logo 0.3s 0.2s 1 cubic-bezier(0.19, 1.08, 0.56, 1.42);
+  -moz-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.menu-bars.is-clicked:before {
+  display: none;
+  -moz-animation: none;
+  -webkit-animation: none;
+  animation: none;
+}
+.menu-bars.is-clicked .menu-bars__row {
+  background-color: transparent;
+  -moz-animation: none;
+  -webkit-animation: none;
+  animation: none;
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.menu-bars.is-clicked .menu-bars__row:before {
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 0%;
+}
+.menu-bars.is-clicked .menu-bars__row:after {
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  bottom: 0%;
+}
+
+.menu-bars.no-before {
+  padding: 14px 18px 14px 15px;
+}
+.menu-bars.no-before:before {
+  display: none;
+}

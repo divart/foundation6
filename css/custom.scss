@@ -1,0 +1,373 @@
+@import "compass/css3";
+@import "inc/vars";
+@import "inc/slider"; //comment this line if you don't use slider
+//@import "inc/foundation"; // uncomment this line to use custom row width and column paddings
+
+/* -----------------------------------------
+   WordPress Core Classes
+----------------------------------------- */
+.alignnone {
+	margin: 0 1em 1em 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1em;
+}
+
+.wp-caption {
+	background: #fff;
+	border: 1px solid #f0f0f0;
+	max-width: 100%; /* Image does not overflow the content area */
+	padding: 5px 5px 10px;
+	text-align: center;
+	img {
+		width: auto;
+		margin-bottom: 10px;
+	}
+	p{
+		margin-bottom: 0;
+	}
+}
+
+#wpadminbar {
+	opacity: 0.3;
+	transition: 0.2s opacity linear;
+	-webkit-transform: translateZ(0);
+	&:hover, &:focus {
+		opacity: 1;
+	}
+}
+
+/* -----------------------------------------
+   General fixes
+----------------------------------------- */
+
+html, body {
+	height: auto;
+}
+
+html {
+	min-height: 100%;
+	position: relative;
+}
+
+body {
+	position: static;
+}
+
+/* Placeholder styling */
+
+input, textarea {
+	@include input-placeholder {
+		color: #555;
+	}
+}
+
+/* Input Styling */
+[type=color],
+[type=date],
+[type=datetime-local],
+[type=datetime],
+[type=email],
+[type=month],
+[type=number],
+[type=password],
+[type=search],
+[type=tel],
+[type=text],
+[type=time],
+[type=url],
+[type=week],
+textarea {
+	/* STYLES GO THERE */
+	margin-bottom: 0;
+}
+
+textarea[rows] {
+	/*Styles for TextArea*/
+	height: 150px;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+[type=checkbox],
+[type=file],
+[type=radio]{
+	margin-bottom: 0;
+}
+
+/* -----------------------------------------
+   Typography
+----------------------------------------- */
+body {
+	color: $text_color;
+	font-family: $font;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a {
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	font-family: inherit;
+	color: #222;
+}
+
+h1 {
+	/*basic heading styles*/
+}
+
+h2 {
+	/*basic heading styles*/
+}
+
+h3 {
+	/*basic heading styles*/
+}
+
+h4 {
+	/*basic heading styles*/
+}
+
+h5 {
+	/*basic heading styles*/
+}
+
+h6 {
+	/*basic heading styles*/
+}
+
+p {
+	/*basic paragraph styles*/
+	&:empty {
+		display: none;
+	}
+	a {
+		text-decoration: underline;
+	}
+}
+
+ul {
+	/*basic list styles*/
+	li {
+		/*basic list-item styles*/
+	}
+}
+
+a {
+	color: $main_color;
+	@include transition(all .3s ease-in-out);
+	&:hover, &:focus {
+		/*basic hover and focus effects*/
+		color: darken($main_color, 20);
+		outline: none;
+	}
+}
+
+/* ------------------------------------
+    Basic Styles
+------------------------------------- */
+
+/* Clearfix */
+
+.clearfix {
+	zoom: 1;
+	&:before, &:after {
+		content: "";
+		display: table;
+		height: 0;
+		overflow: hidden;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+/* Button additional styles */
+
+.button {
+	@include transition(all .3s ease-in-out);
+	&:hover, &:focus {
+		/*basic hover and focus effects*/
+	}
+}
+
+/* Align Middle */
+.align-middle {
+	@include align-middle();
+}
+
+/* Pagination */
+
+.pagination .current {
+	color: #fff;
+	background: $main_color;
+}
+
+/* Search form */
+
+#searchform {
+	position: relative;
+}
+
+#s {
+	padding-right: 75px;
+}
+
+#searchsubmit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	height: auto;
+	padding: .5rem;
+	&:after{
+		//content: "\f002";
+		font-family: FontAwesome;
+		font-size: 20px;
+	}
+}
+
+
+//use @extend %bgcover; to selector if you need background cover;
+%bgcover {
+	@include background-size(cover);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+/* ------------------------------------
+    Header Styles
+------------------------------------- */
+
+.logo img{
+	max-height: 150px;
+}
+
+/* ------------------------------------
+    Content Styles
+------------------------------------- */
+
+/* Blog page */
+
+.posts-list{
+	article {
+		padding-bottom: 20px;
+		border-bottom: 1px solid #dddddd;
+		margin-bottom: 20px;
+	}
+	.entry-meta{
+		margin-bottom: 0;
+	}
+	#searchform{
+		margin-bottom: 40px;
+	}
+}
+.entry-meta{
+	color: #666;
+	font-size: 14px;
+}
+.thumbnail{
+	margin-bottom: 20px;
+}
+
+/* Comments block */
+
+.comment-list{
+	@include list-unstyled;
+}
+.comment-meta{
+	font-size: 14px;
+}
+
+.comment-metadata{
+	color: #666;
+}
+.comment-content {
+	font-size: 14px;
+	padding-left: 25px;
+	margin-top: 20px;
+	border-left: 1px solid #ddd;
+}
+.comment-reply-link{
+	display: inline-block;
+	padding: .33333rem .5rem;
+	font-size: .8rem;
+	line-height: 1;
+	white-space: nowrap;
+	border-radius: 0;
+	background: #777;
+	color: #fefefe;
+}
+
+/* 404 page */
+
+.not-found{
+	padding: 100px 0;
+	.label{
+		text-decoration: none;
+		cursor: pointer;
+		background-color: $main_color;
+		&:hover{
+			background-color: darken($main_color, 8);
+			color: #fff;
+		}
+	}
+}
+
+/* Sidebar */
+
+.widget{
+	margin-bottom: 20px;
+}
+
+/* -----------------------------------------
+    Contact Form
+----------------------------------------- */
+
+/*basic Gravity Form styles and fixes, if you dont need/use this comment or delete styles below*/
+@import "inc/gform";
+
+/* ------------------------------------
+    Footer Styles
+------------------------------------- */
+
+.footer {
+
+}
+
+.sticky-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.footer-menu {
+	@include list-unstyled;
+	li {
+		display: inline-block;
+		a {
+			display: block;
+			padding: 5px 10px;
+		}
+	}
+}

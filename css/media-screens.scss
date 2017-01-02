@@ -1,0 +1,239 @@
+@import "compass/css3";
+@import "inc/vars";
+
+/*-=Tablet screens=-*/
+@media only screen and (max-width: 1023px) {
+
+}
+
+/*-=Small screens=-*/
+@media only screen and (max-width: 639px) {
+	/* TOP BAR Mobile STYLING */
+
+	.title-bar {
+		background-color: $main_color; /* collapsed menu bar color */
+		padding: 0;
+		line-height: 45px;
+		.title-bar-title {
+			vertical-align: top;
+		}
+		.menu-icon {
+			position: relative;
+			display: inline-block;
+			padding: 0;
+			width: 20px;
+			height: 45px;
+			background-color: transparent;
+			vertical-align: top;
+			cursor: pointer;
+			outline: none;
+			&:after {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 2px;
+				background: #fefefe;
+				top: 50%;
+				left: 0;
+				margin-top: -9px;
+				@include box-shadow(0 7px 0 #fefefe, 0 14px 0 #fefefe);
+			}
+		}
+	}
+
+	.top-bar {
+		height: auto;
+		padding: 0;
+		background: $main_color; /* menu list background color */
+		ul {
+			background: transparent;
+			@include list-unstyled;
+			li {
+				> a {
+					display: block;
+					font-family: $font;
+					color: white; /* menu item text color */
+					font-size: 14px;
+					background: $main_color; /* menu item background color */
+					line-height: 45px;
+					padding: 0 15px;
+					&:hover {
+						background: darken($main_color, 5) !important; /* menu item background color on hover */
+					}
+				}
+				&
+				&.current-menu-item, &.current_page_ancestor {
+					> a {
+						background: lighten($main_color, 5) !important; /* current/parent menu item background color */
+					}
+				}
+				&.has-dropdown {
+					a:after {
+						display: none;
+					}
+					.accordion-toggle {
+						display: block;
+						position: absolute;
+						width: 50px;
+						height: 45px;
+						right: 0;
+						top: 0;
+						color: #fff; /* dropdown arrow color */
+						z-index: 100;
+						text-align: center;
+						i.fa {
+							font-size: 13px;
+							line-height: 1;
+							height: 13px;
+							position: absolute;
+							top: 0;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							margin: auto;
+						}
+					}
+				}
+				&[aria-expanded="true"] {
+					> a {
+						background: darken($main_color, 3); /* menu item background color on open dropdown */
+						.accordion-toggle i.fa {
+							@include transform(rotate(90deg));
+						}
+					}
+				}
+				.submenu a {
+					padding-left: 25px;
+				}
+			}
+		}
+	}
+	.alignright, .alignleft, .aligncenter, .alignnone{
+		float: none;
+		margin: 0 0 1em;
+	}
+}
+
+/* max-width 640px and lower. Use this for mobiles only */
+
+/*-=Medium screens=-*/
+@media only screen and (min-width: 640px) {
+	/* TOP BAR STYLING */
+
+	.title-bar {
+		display: none;
+	}
+
+	.top-bar {
+		padding: 0;
+		background-color: transparent;
+		ul {
+			background: transparent;
+			@include list-unstyled;
+		}
+		.header-menu {
+			li {
+				float: left;
+				background-color: transparent;
+				> a {
+					/* Regular menu item style */
+					display: block;
+					padding: 0 15px;
+					background: transparent;
+					font-size: 16px;
+					line-height: 40px;
+					color: $main_color;
+					font-family: $font;
+				}
+				&.current-menu-item, &.current_page_ancestor, &.current_page_parent {
+					> a {
+						/* Style of Current page and Ancestor page */
+						background: $main_color;
+						color: invert($main_color);
+					}
+				}
+				&.has-dropdown {
+					> a {
+						/* Style of item with dropdown */
+						padding: 0 15px;
+						&:after {
+							/* Hide dropdown arrow */
+							display: none !important;
+						}
+						&:hover{
+							/* Hover state for dropdown link */
+
+						}
+					}
+				}
+				> a:hover {
+					/* menu item style on hover */
+					background: $main_color;
+					color: invert($main_color);
+				}
+			}
+			&:after {
+				content: '';
+				display: table;
+				clear: both;
+			}
+		}
+
+		/* Dropdown item styling */
+
+		ul li:hover > a {
+			/* Parent link style on dropdown hover */
+			background: invert($main_color);
+			color: $main_color;
+		}
+
+		.submenu {
+			border: none;
+			li {
+				display: block;
+				> a {
+					/* Regular link in dropdown */
+					background: invert($main_color);
+					color: $main_color;
+					&:hover{
+						/* Dropdown link on hover */
+						background: lighten($main_color, 10);
+						color: white;
+					}
+				}
+			}
+		}
+		.is-dropdown-submenu .is-dropdown-submenu{
+			margin-top: 0;
+			li {
+				a {
+					/* Styles for 2nd level dropdown menu link */
+
+				}
+			}
+		}
+	}
+
+	/* Align Menu to the right
+		 .top-bar .header-menu { float:right; }*/
+	/* Align Menu to the center
+		 .top-bar .header-menu { text-align: center; }
+		 .top-bar .header-menu > li{ float: none; display: inline-block; } */
+
+}
+
+/* min-width 641px */
+
+@media only screen and (min-width: 640px) and (max-width: 1023px) {
+	// min-width 641px and max-width 1024px, use when QAing tablet-only issues
+}
+
+/*-=Large screens=-*/
+@media only screen and (min-width: 1024px) {
+	//min-width 1025px, large screens
+}
+
+@media only screen and (min-width: 1200px) {
+	// min-width 1201px, large screens
+}
